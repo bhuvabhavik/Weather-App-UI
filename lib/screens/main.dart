@@ -6,6 +6,10 @@ void main() {
   runApp(WeatherUI());
 }
 
+const tstyle14 = TextStyle(color: Colors.white, fontSize: 14);
+const tstyle16 = TextStyle(color: Colors.white, fontSize: 16);
+const tstyle20 = TextStyle(color: Colors.white, fontSize: 20);
+
 class WeatherUI extends StatelessWidget {
   const WeatherUI({Key? key}) : super(key: key);
 
@@ -69,19 +73,24 @@ class WeatherUI extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             SizedBox(
-                              height: 120,
+                              height: 150,
                             ),
                             Text(
-                              "Bhuj Gujarat",
+                              "Toronto Canada",
                               style: GoogleFonts.lato(
-                                  fontSize: 35,
+                                  fontSize: 30,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white),
                             ),
+                            SizedBox(
+                              height: 6,
+                            ),
                             Text(
-                              'hello',
+                              '07:15 PM - THURSDAY, 12 MAY 2022',
                               style: GoogleFonts.lato(
-                                  color: Colors.white, fontSize: 18),
+                                  color: Colors.white,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold),
                             ),
                           ],
                         ),
@@ -90,16 +99,27 @@ class WeatherUI extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "Bhuj Gujarat",
+                              "5\u2103",
                               style: GoogleFonts.lato(
-                                  fontSize: 35,
-                                  fontWeight: FontWeight.bold,
+                                  fontSize: 85,
+                                  fontWeight: FontWeight.w300,
                                   color: Colors.white),
                             ),
-                            Text(
-                              'hello',
-                              style: GoogleFonts.lato(
-                                  color: Colors.white, fontSize: 18),
+                            Row(
+                              children: [
+                                Text(
+                                  '🌜',
+                                  style: tstyle20,
+                                ),
+                                SizedBox(
+                                  width: 8,
+                                ),
+                                Text(
+                                  'Night',
+                                  style: GoogleFonts.lato(
+                                      color: Colors.white, fontSize: 18),
+                                ),
+                              ],
                             )
                           ],
                         ),
@@ -111,23 +131,99 @@ class WeatherUI extends StatelessWidget {
                       Container(
                         margin: EdgeInsets.symmetric(vertical: 40),
                         decoration: BoxDecoration(
-                            border: Border.all(color: Colors.white)),
+                            border: Border.all(color: Colors.white38)),
                       ),
-                      Row(
-                        children: [
-                          Text(
-                            "Bhuj Gujarat",
-                            style: GoogleFonts.lato(
-                                fontSize: 35,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white),
-                          ),
-                          Text(
-                            'hello',
-                            style: GoogleFonts.lato(
-                                color: Colors.white, fontSize: 18),
-                          ),
-                        ],
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              children: [
+                                Text(
+                                  'Wind',
+                                  style: tstyle14,
+                                ),
+                                Text(
+                                  '10',
+                                  style: tstyle16,
+                                ),
+                                Text(
+                                  'km/p',
+                                  style: tstyle14,
+                                ),
+                                Stack(
+                                  children: [
+                                    Container(
+                                      width: 50,
+                                      height: 5,
+                                      color: Colors.white38,
+                                    ),
+                                    Container(
+                                      width: 15,
+                                      height: 5,
+                                      color: Colors.greenAccent,
+                                    )
+                                  ],
+                                )
+                              ],
+                            ),
+                            Column(
+                              children: [
+                                Text('Rain', style: tstyle14),
+                                Text('89', style: tstyle16),
+                                Text('%', style: tstyle14),
+                                Stack(
+                                  children: [
+                                    Container(
+                                      height: 5,
+                                      width: 50,
+                                      color: Colors.white38,
+                                    ),
+                                    Container(
+                                      height: 5,
+                                      width: 5,
+                                      color: Colors.redAccent,
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                            Column(
+                              children: [
+                                Text('humidity', style: tstyle14),
+                                Text('75', style: tstyle16),
+                                Text('%', style: tstyle14),
+                                Stack(
+                                  children: [
+                                    Container(
+                                      height: 5,
+                                      width: 50,
+                                      color: Colors.white38,
+                                    ),
+                                    Container(
+                                      height: 5,
+                                      width: 40,
+                                      color: Colors.greenAccent,
+                                    )
+                                  ],
+                                )
+                              ],
+                            ),
+                            // Text(
+                            //   "Bhuj Gujarat",
+                            //   style: GoogleFonts.lato(
+                            //       fontSize: 35,
+                            //       fontWeight: FontWeight.bold,
+                            //       color: Colors.white),
+                            // ),
+                            // Text(
+                            //   'hello',
+                            //   style: GoogleFonts.lato(
+                            //       color: Colors.white, fontSize: 18),
+                            // ),
+                          ],
+                        ),
                       )
                     ],
                   )
